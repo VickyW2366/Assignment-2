@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 use App\Models\Bus;
+use App\Models\Status;
 use mysqli;
 
 class BusController extends Controller
@@ -12,13 +13,13 @@ class BusController extends Controller
     //lists all buses in the database
     function index()
     {
-        $buses = Bus::paginate(4);
-      //return view('buses.index',['buses' => $buses]);
+        $buses = Bus::simplePaginate(4);
         return view('buses.index',['buses' => $buses]);
     }
     function create()
     {
-        return view('buses.create');
+        $statuses = Status::all();
+        return view('buses.create', ['statuses' => $statuses]);
     }
     function about()
     {
@@ -33,6 +34,7 @@ class BusController extends Controller
         $bus->withdrawn = $request->withdrawn;
         $bus->numberplate = $request->numberplate;
         $bus->origin = $request->origin;
+        $bus->status_id = $request->status_id;
 
         $validatedData = $request->validate([
         'chassis'=>['required'],
@@ -40,8 +42,10 @@ class BusController extends Controller
         'withdrawn'=>['required', 'numeric', 'integer', 'gte:entered_service', 'lt:2026'],
         'numberplate'=>['required'],
         'origin'=>['required', 'alpha'],
-        ],[//A custom error message for if the numberplate field is not interacted with
+        'status_id'=>['required'],
+        ],[//A custom error message for if the numberplate/status fields are not not interacted with
         'numberplate.required' => 'Either a number plate should be added, or the Unregistered box should be selected.',
+        'status_id.required' => 'Please select a status.'
         ]);
         
         $bus->save();
@@ -68,6 +72,7 @@ class BusController extends Controller
         $bus->withdrawn = $request->withdrawn;
         $bus->numberplate = $request->numberplate;
         $bus->origin = $request->origin;
+        $bus->status_id = $request->status_id;
         
         $validatedData = $request->validate([
         'chassis'=>['required'],
@@ -75,8 +80,10 @@ class BusController extends Controller
         'withdrawn'=>['required', 'numeric', 'integer', 'gte:entered_service', 'lt:2026'],
         'numberplate'=>['required'],
         'origin'=>['required', 'alpha'],
-        ],[//A custom error message for if the numberplate field is not interacted with
+        'status_id'=>['required'],
+        ],[//A custom error message for if the numberplate/status fields are not not interacted with
         'numberplate.required' => 'Either a number plate should be added, or the Unregistered box should be selected.',
+        'status_id.required' => 'Please select a status.'
         ]);
         
         $bus->save();
@@ -95,6 +102,7 @@ class BusController extends Controller
             ->orWhere('withdrawn', 'ALL', '%' . $request->searchbar . '%')
             ->orWhere('numberplate', 'LIKE', '%' . $request->searchbar . '%')
             ->orWhere('origin', 'LIKE', '%' . $request->searchbar . '%')
+            ->orWhere('status_id', 'LIKE', '%' . $request->searchbar . '%')
             ->get();
              return view('buses.search', ['buses' => $buses]);
     }

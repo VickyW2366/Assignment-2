@@ -14,13 +14,14 @@
       <tr>
         <th>City of Service</th>
         <th>Numberplate</th>
+        <th>Status</th>
       </tr>
       @foreach ($buses as $bus)
       <tr>
           <td>{{$bus->origin}}</td>
           <td><a href="/buses/{{$bus->id}}">
-          {{$bus->numberplate}}</td>
-        </a>
+          {{$bus->numberplate}}</td></a>
+          <td>{{$bus->status->name}}</td>
       </tr>
       @endforeach
   </table>

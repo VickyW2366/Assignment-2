@@ -48,6 +48,23 @@
       <span class="required">*</span>
       <p></p>
     </div>
+
+<div>
+  <fieldset>   
+    <legend>Select the Status of your bus:<span class="required">*</span></legend>
+    @foreach ($statuses as $status)
+    <label for="{{$status->name}}">
+      <input
+        type="radio"
+        name="status_id"
+        id="{{$status->name}}"
+        value="{{$status->id}}"/>
+      {{$status->name}}
+    </label>
+    @endforeach
+  </fieldset>
+</div>
+
     <div class="submit">
       <button type="submit">Save the bus</button>
     </div>

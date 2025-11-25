@@ -78,7 +78,7 @@ th {
 tr:hover {background-color: #e0dcbb;}
 
 /* pagination buttons below the table */
-/*.pages a{
+.pages a{
   text-decoration: none;
   padding: 5px 10px;
   margin-top: 1px;
@@ -91,12 +91,12 @@ tr:hover {background-color: #e0dcbb;}
 }
 .pages a:hover {
   background: #987777;
+  color: #b9b9b9;
 }
 .pages a.active {
   background-color: #5e3f3f;
-  color: #dddddd;
 }
- .pages a:hover:not(.active) {
+ /* .pages a:hover:not(.active) {
   background-color: #e0dcbb;
 }
 .pages a.disabled {
