@@ -1,5 +1,5 @@
 <x-layout title="Edit a bus">
-    <h1>Edit the details for {{$bus->title}}</h1>
+  <h1>Edit the details for {{$bus->title}}</h1>
   <span class="required">(*) Indicates a required field</span>
   <p></p>
 
@@ -70,7 +70,7 @@
 </div>
 
     <div class="submit">
-        <button type="submit">Save Changes</button>
+      <button type="submit">Save Changes</button>
     </div>
-    </form>
+  </form>
 </x-layout>

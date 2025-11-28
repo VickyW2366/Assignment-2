@@ -1,5 +1,6 @@
 <x-layout title="Show the details for a bus">
     <h1>{{$bus->chassis}}</h1>
+    <p>Status: {{$bus->status->name}}</p>
     <p>Entered service: {{$bus->entered_service}}</p>
     <p>Withdrawn: {{$bus->withdrawn}}</p>
     <p>Numberplate: {{$bus->numberplate}}</p>

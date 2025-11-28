@@ -55,13 +55,15 @@ class BusController extends Controller
     //shows the information for a bus
     function show($id)
     {
+        $statuses = Status::all();
         $bus = Bus::find($id);
-        return view('buses.show', ['bus' => $bus]);
+        return view('buses.show', ['bus' => $bus],['statuses' => $statuses]);
     }
     function edit($id)
     {
+        $statuses = Status::all();
         $bus = Bus::find($id);
-        return view('buses.edit', ['bus' => $bus]);
+        return view('buses.edit', ['bus' => $bus],['statuses' => $statuses]);
     }
     //updates the new information for a bus already in the database
     function update(Request $request)

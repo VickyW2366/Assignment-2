@@ -13,6 +13,7 @@
         <li><a href="/buses">Home</a></li>
         <li><a href="/buses/create">Add new bus</a></li>
         <li><a href="/buses/about">About</a></li>
+        <li><a href="/statuses">Status</a></li>
         <li style="float:right"> 
           <div class="search-container">
             <form method='POST' action="/bus/search.php">

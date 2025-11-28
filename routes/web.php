@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BusController;
+use App\Http\Controllers\StatusController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,3 +17,4 @@ Route::get('/buses/{id}/edit', [BusController::class, 'edit']);
 Route::patch('/buses', [BusController::class, 'update']);
 Route::delete('/buses', [BusController::class, 'destroy']);
 Route::post('/buses/search', [BusController::class, 'search']);
+Route::get('/statuses', [StatusController::class, 'index']);
