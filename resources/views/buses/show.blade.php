@@ -5,7 +5,7 @@
     <p>Withdrawn: {{$bus->withdrawn}}</p>
     <p>Numberplate: {{$bus->numberplate}}</p>
     <p>Origin: {{$bus->origin}}</p>
-
+@can('edit')
     <div class="submit">
     <a href='/buses/{{$bus->id}}/edit'>
         <button class="btn-group">Edit</button>
@@ -18,4 +18,5 @@
         <button class="btn-group" type='submit'>Delete</button>
     </form>
     </div>
+@endcan
 </x-layout>

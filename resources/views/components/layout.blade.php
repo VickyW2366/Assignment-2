@@ -11,10 +11,28 @@
     <nav>
       <ul>
         <li><a href="/buses">Home</a></li>
+        @can('edit')
         <li><a href="/buses/create">Add new bus</a></li>
+        @endcan
         <li><a href="/buses/about">About</a></li>
         <li><a href="/statuses">Status</a></li>
+        @guest
+        <li><a href="/login">Sign in</a></li>
+        @endguest
         <li style="float:right"> 
+           @auth
+      <div class="element_container">
+        <div class="element1">Logged in as {{Auth::user()->name}}</div>
+        <div class="element2">
+          <div class="submit">
+            <form method='POST' action='/logout'>
+              @csrf
+            <button type='submit'>Log out</button>
+          </form>
+        </div>
+        </div>
+      </div>
+      @endauth
           <div class="search-container">
             <form method='POST' action="/bus/search.php">
               @csrf

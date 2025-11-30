@@ -30,6 +30,15 @@ h1 {
   background-color: #faf6d6;
   color: #000000;
 }
+.element_container {
+  float: left;
+}
+.element1 {
+  float: left;
+}
+.element2 {
+  float: right;
+}
 
 /* Search bar */
 .navbar input[type=text] {
@@ -123,6 +132,7 @@ tr:hover {background-color: #e0dcbb;}
   font-size: 17px;
   border: none;
   cursor: pointer;
+
 }
 .submit button:hover {
   background: #987777;
