@@ -30,36 +30,19 @@ h1 {
   background-color: #faf6d6;
   color: #000000;
 }
+
+/* logged in as */
 .element_container {
-  float: left;
-}
+  display: flex;
+  display: inline-block;
+}/* text */
 .element1 {
   float: left;
-}
+  width:50%;
+}/* log out button */
 .element2 {
   float: right;
-}
-
-/* Search bar */
-.navbar input[type=text] {
-  padding: 6px;
-  margin-top: 1px;
-  font-size: 17px;
-  border: none;
-}
-.navbar .search-container button {
-  float: right;
-  padding: 5px 10px;
-  margin-top: 1px;
-  margin-right: 20px;
-  background: #5e3f3f;
-  color: #dddddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-}
-.navbar .search-container button:hover {
-  background: #987777;
+  width:50%;
 }
 
 /* index full list of buses */

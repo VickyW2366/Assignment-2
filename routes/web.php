@@ -15,7 +15,6 @@ Route::patch('/buses', [BusController::class, 'update'])->middleware('auth');
 Route::delete('/buses', [BusController::class, 'destroy'])->middleware('auth');
 Route::get('/buses/create', [BusController::class, 'create'])->middleware(['auth', 'can:edit']);
 Route::get('/buses/about', [BusController::class, 'about']);
-Route::post('/buses/search', [BusController::class, 'search'])->middleware('auth');
 Route::get('/buses/{id}', [BusController::class, 'show'])->middleware('auth');
 Route::get('/buses/{id}/edit', [BusController::class, 'edit'])->middleware(['auth', 'can:edit']);
 

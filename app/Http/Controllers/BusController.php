@@ -97,15 +97,4 @@ class BusController extends Controller
         $bus->delete();
         return redirect('/buses');
     }
-    function search(Request $request)
-    {//Shows all results relating to the search in a list like index
-        $buses = Bus::where('chassis', 'LIKE', '%' . $request->searchbar . '%')
-            ->orWhere('entered_service', 'ALL', '%' . $request->searchbar . '%')
-            ->orWhere('withdrawn', 'ALL', '%' . $request->searchbar . '%')
-            ->orWhere('numberplate', 'LIKE', '%' . $request->searchbar . '%')
-            ->orWhere('origin', 'LIKE', '%' . $request->searchbar . '%')
-            ->orWhere('status_id', 'LIKE', '%' . $request->searchbar . '%')
-            ->get();
-             return view('buses.search', ['buses' => $buses]);
-    }
 }

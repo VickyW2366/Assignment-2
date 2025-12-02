@@ -7,9 +7,15 @@ hasMany belongsTo
 
 
 ## TODO ##
-add status images? maybe do photos of the bus instead
+icons for status? maybe photos of the bus
 status css green orange yellow red blue(on loan)
 make unregistered/status old values show up when the data isnt valid or being edited like all other fields
 pagination buttons
 javascript
-user validation
+user authentication validation
+delete searchbar
+3rd table
+
+
+## Bibliography ##
+W3Schools . HTML Div Tutorial. W3Schools. https://www.w3schools.com/html/html_div.asp
