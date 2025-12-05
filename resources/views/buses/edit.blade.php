@@ -3,6 +3,7 @@
   <span class="required">(*) Indicates a required field</span>
   <p></p>
 
+  <!--Displays an error message if any fields aren't filled in -->
 @if ($errors->any())
     <div class="alert-danger">
         <ul>
@@ -19,7 +20,17 @@
     <!--A hidden field contains the id number of the bus -->
     <input type="hidden" name="id" value="{{$bus->id}}">
     <div>
-    <!-- The text boxes are populated with values from the database ready for the user to edit -->
+    <fieldset>
+    <legend>Select the Status of your bus:<span class="required">*</span></legend>
+    @foreach ($statuses as $status)
+    <label for="{{$status->name}}">
+      <input type="radio" name="status_id" id="{{$status->name}}" value="{{$status->id}}"/>
+      {{$status->name}}
+    </label>
+    @endforeach
+    </fieldset>
+    </div>
+    <div>
         <br>
         <label for="chassis">Chassis:</label>
         <input type="text" id="chassis" name="chassis" value="{{$bus->chassis}}">
@@ -52,23 +63,6 @@
         <span class="required">*</span>
         <p></p>
     </div>
-
-<div>
-  <fieldset>
-    <legend>Select the Status of your bus:<span class="required">*</span></legend>
-    @foreach ($statuses as $status)
-    <label for="{{$status->name}}">
-      <input
-        type="radio"
-        name="status_id"
-        id="{{$status->name}}"
-        value="{{$status->id}}"/>
-      {{$status->name}}
-    </label>
-    @endforeach
-  </fieldset>
-</div>
-
     <div class="submit">
       <button type="submit">Save Changes</button>
     </div>

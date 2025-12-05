@@ -10,10 +10,10 @@ use mysqli;
 
 class BusController extends Controller
 {
-    //lists all buses in the database
+    //lists all buses in the database, 6 buses per page
     function index()
     {
-        $buses = Bus::simplePaginate(4);
+        $buses = Bus::simplePaginate(6);
         return view('buses.index',['buses' => $buses]);
     }
     function create()

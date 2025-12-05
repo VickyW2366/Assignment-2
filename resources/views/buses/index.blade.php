@@ -3,11 +3,11 @@
 <head>
 <title>List the buses</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8">
-<link href="{{asset('css/style.css')}}" type="text/css" rel="stylesheet">
+<!--- <link href="{{asset('css/style.css')}}" type="text/css" rel="stylesheet"> --->
 </head>
 <body>
 <x-layout title="List the buses">
-  @auth
+
     <h1>Here's our full list of buses:</h1>
     <p></p>
     <br>
@@ -30,10 +30,7 @@
 <div class="pages">
   <a href="{{ $buses->links() }}"></a>
 </div>
-@endauth @guest
-  <p>
-    You need to be logged in to view the content of this website. @endguest
-  </p>
+
 </x-layout>
 </body>
 </html>

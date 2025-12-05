@@ -5,6 +5,8 @@
     <link rel="icon" type="image/x-icon" href="/Images/favicon2.ico">
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <link href="{{asset('css/style.css')}}" type="text/css" rel="stylesheet" />
+    @viteReactRefresh
+    @vite(['resources/js/app.jsx', 'resources/js/app.js'])
   </head>
   <body>
     <div class="navbar">
@@ -42,5 +44,6 @@
     <div style="padding:60px 70px">
       {{$slot}}
     </div>
+    <div id="react-content"></div>
   </body>
 </html>

@@ -17,6 +17,13 @@ function login(Request $request)
         "email" => $request->email,
         "password" => $request->password
     ];
+    $userDetailsVal = $request->validate([
+        'email'=>['required'],
+        'password'=>['required']
+    ],[//A custom error message for if the username/password fields are not not interacted with
+        'email.required' => 'Please input your email address.',
+        'password.required' => 'Please input your password.'
+        ]);
 
     if (Auth::attempt($userDetails)) {
         $request->session()->regenerate();
