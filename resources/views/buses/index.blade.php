@@ -26,7 +26,7 @@
       </tr>
       @endforeach
   </table>
-   
+  <p></p>
 <div class="pages">
   <a href="{{ $buses->links() }}"></a>
 </div>

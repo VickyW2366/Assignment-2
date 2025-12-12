@@ -14,6 +14,7 @@
     </div>
 @endif
 
+<div class="text_fields">
   <form method="POST" class="formBox" action="/buses">
     @csrf
     <div>
@@ -24,38 +25,44 @@
       <input type="radio" name="status_id" id="{{$status->name}}" value="{{$status->id}}"/>
       {{$status->name}}
     </label>
+    <br>
     @endforeach
     </fieldset>
     </div>
+    <p></p>
     <div>
-      <br>
       <label for="chassis">Chassis:</label>
+      <br>
       <input type="text" id="chassis" name="chassis" value="{{ old('chassis') }}"/>
       <span class="required">*</span>
       <p></p>
     </div>
     <div>
       <label for="entered_service">Entered service:</label>
+      <br>
       <input type="text" placeholder="YYYY:" id="entered_service" name="entered_service" value="{{ old('entered_service') }}"/>
       <span class="required">*</span>
       <p></p>
     </div>
     <div>
       <label for="withdrawn">Withdrawn from service:</label>
+      <br>
       <input type="text" placeholder="YYYY:" id="withdrawn" name="withdrawn" value="{{ old('withdrawn' ) }}"/>
       <span class="required">*</span>
       <p></p>
     </div>
     <div>
       <label for="numberplate">Numberplate:</label>
+      <br>
       <input type="text" id="numberplate" name="numberplate" value="{{ old('numberplate') }}"/>
-
+      <br>
       <input type="checkbox" id="numberplate" name="numberplate" value="Unregistered">
-      <label for="numberplate">Unregistered</label><br>
+      <label for="numberplate">Unregistered</label><br></br>
       <p></p>
     </div>
     <div>
-      <label for="origin">Origin:</label>
+      <label for="origin">City/Town of Origin:</label>
+      <br>
       <input type="text" id="origin" name="origin" value="{{ old('origin') }}"/>
       <span class="required">*</span>
       <p></p>
@@ -64,4 +71,5 @@
       <button type="submit">Save the bus</button>
     </div>
   </form>
+  </div>
 </x-layout>

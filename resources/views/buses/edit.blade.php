@@ -1,7 +1,7 @@
 <x-layout title="Edit a bus">
   <h1>Edit the details for {{$bus->title}}</h1>
   <span class="required">(*) Indicates a required field</span>
-  <p></p>
+    <p></p>
 
   <!--Displays an error message if any fields aren't filled in -->
 @if ($errors->any())
@@ -14,6 +14,7 @@
     </div>
 @endif
 
+  <div class="text_fields">
     <form action="/buses" method="POST">
     @csrf
     @method('PATCH')
@@ -27,44 +28,52 @@
       <input type="radio" name="status_id" id="{{$status->name}}" value="{{$status->id}}"/>
       {{$status->name}}
     </label>
+    <br>
     @endforeach
     </fieldset>
     </div>
+    <p></p>
     <div>
-        <br>
-        <label for="chassis">Chassis:</label>
-        <input type="text" id="chassis" name="chassis" value="{{$bus->chassis}}">
-        <span class="required">*</span>
-        <p></p>
+      <br>
+      <label for="chassis">Chassis:</label>
+      <br>
+      <input type="text" id="chassis" name="chassis" value="{{$bus->chassis}}">
+      <span class="required">*</span>
+      <p></p>
     </div>
     <div>
-        <label for="entered_service">Entered service:</label>
-        <input type="text" placeholder="YYYY:" id="entered_service" name="entered_service" value="{{$bus->entered_service}}">
-        <span class="required">*</span>
-        <p></p>
+      <label for="entered_service">Entered service:</label>
+      <br>
+      <input type="text" placeholder="YYYY:" id="entered_service" name="entered_service" value="{{$bus->entered_service}}">
+      <span class="required">*</span>
+      <p></p>
     </div>
     <div>
-        <label for="withdrawn">Withdrawn from service:</label>
-        <input type="text" placeholder="YYYY:" id="withdrawn" name="withdrawn" value="{{$bus->withdrawn}}">
-        <span class="required">*</span>
-        <p></p>
+      <label for="withdrawn">Withdrawn from service:</label>
+      <br>
+      <input type="text" placeholder="YYYY:" id="withdrawn" name="withdrawn" value="{{$bus->withdrawn}}">
+      <span class="required">*</span>
+      <p></p>
     </div>
     <div>
-        <label for="numberplate">Numberplate:</label>
-        <input type="text" id="numberplate" name="numberplate" value="{{$bus->numberplate}}">
-
-        <input type="checkbox" id="numberplate" name="numberplate" value="Unregistered">
-        <label for="numberplate">Unregistered</label><br>
-        <p></p>
+      <label for="numberplate">Numberplate:</label>
+      <br>
+      <input type="text" id="numberplate" name="numberplate" value="{{$bus->numberplate}}">
+      <br>
+      <input type="checkbox" id="numberplate" name="numberplate" value="Unregistered">
+      <label for="numberplate">Unregistered</label><br>
+      <p></p>
     </div>   
     <div>
-        <label for="origin">Origin:</label>
-        <input type="text" id="origin" name="origin" value="{{$bus->origin}}">
-        <span class="required">*</span>
-        <p></p>
+      <label for="origin">City/Town of Origin:</label>
+      <br>
+      <input type="text" id="origin" name="origin" value="{{$bus->origin}}">
+      <span class="required">*</span>
+      <p></p>
     </div>
     <div class="submit">
       <button type="submit">Save Changes</button>
     </div>
   </form>
+  </div>
 </x-layout>
