@@ -71,8 +71,10 @@ tr:hover {background-color: #e0dcbb;}
 
 /* pagination buttons below the table */
 .pages a{
+  display: block;
+  float: left;
   text-decoration: none;
-  padding: 5px 10px;
+  padding: 15px 10px;
   margin-top: 1px;
   margin-right: 20px;
   background: #5e3f3f;

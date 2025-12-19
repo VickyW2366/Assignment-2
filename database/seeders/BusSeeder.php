@@ -30,7 +30,7 @@ class BusSeeder extends Seeder
         DB::table('buses')->insert(['chassis' => 'Fabrique Nationale', 'entered_service' => 1932, 'withdrawn' => 1964, 'numberplate' => '1425P', 'origin' => 'Liege', 'status_id' => 2]);
         DB::table('buses')->insert(['chassis' => 'AEC 661T', 'entered_service' => 1939, 'withdrawn' => 1961, 'numberplate' => 'ARD 676', 'origin' => 'Reading', 'status_id' => 1]);
         DB::table('buses')->insert(['chassis' => 'Daimler CTE6', 'entered_service' => 1950, 'withdrawn' => 1965, 'numberplate' => 'FET 618', 'origin' => 'Rotherham', 'status_id' => 4]);
-        DB::table('buses')->insert(['chassis' => 'Garrett Type O', 'entered_service' => 1928, 'withdrawn' => 1945, 'numberplate' => 'WW 4688', 'origin' => 'Mexbrough & Swinton', 'status_id' => 5]);
+        DB::table('buses')->insert(['chassis' => 'Garrett Type O', 'entered_service' => 1928, 'withdrawn' => 1945, 'numberplate' => 'WW 4688', 'origin' => 'Mexbrough', 'status_id' => 5]);
         DB::table('buses')->insert(['chassis' => 'Renault ER100', 'entered_service' => 1980, 'withdrawn' => 2004, 'numberplate' => '8319 JD 13', 'origin' => 'Marseille', 'status_id' => 3]);
         DB::table('buses')->insert(['chassis' => 'Karrier E6', 'entered_service' => 1938, 'withdrawn' => 1953, 'numberplate' => 'AVH 470', 'origin' => 'Huddersfield', 'status_id' => 5]);
     }

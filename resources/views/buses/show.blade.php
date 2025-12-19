@@ -1,9 +1,6 @@
 <x-layout title="Show the details for a bus">
-    <div class="element_container">
-    <div class="element1">
         <h1>{{$bus->origin}} {{$bus->numberplate}}</h1>
-    </div>
-        <table>
+<table>
     <tr>
         <td>Status:</td>
         <td>{{$bus->status->name}}</td>
@@ -33,8 +30,8 @@
 <form method='POST' action='/buses'>
     @csrf
     @method('DELETE')
-        <input type="hidden" name="id" value="{{$bus->id}}">
-        <button class="btn-group" type='submit'>Delete</button>
+    <input type="hidden" name="id" value="{{$bus->id}}">
+    <button class="btn-group" type='submit'>Delete</button>
 </form>
 </div>
 @endcan

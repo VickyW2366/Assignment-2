@@ -3,6 +3,12 @@ php artisan serve
 
 php artisan migrate:fresh --seed
 
+## additional features that have been implemented for Assignment 2. ##
+For each of the additional features you should provide code samples, explain how and where you have used the feature, and present a critical analysis of the tools/technique/approach used that considers issues such as your reason for selecting it, a discussion of the problem it solves, and any potential limitations
+
+## How to install and run the project ## 
+Run php artisan serve in the terminal, open port 8000 and add /buses onto the end of the page's URL.
+
 ## About ##
 This application is a website that hosts an interface for viewing a database of vehicles stored at the Sandtoft trolleybus museum. New buses can be added, and the attributes of existing buses can be changed by authorised users.
 Most of the different pages are accessible by using the navigation bar at the top of the pages, like the Home, About, and Status pages. However the Add New Bus page is restricted to users without the authorisation of the appropriate level .
@@ -66,12 +72,6 @@ When editing the details of a bus, the user can see the previous values displaye
 
 The CSS that was used attempts to keep all colours of text and background consistent and at a good contrast to each other, all text should be easily readable. The hover effect used on the buttons make the page feel more responsive.
 
-## How to install and run the project ## 
-Run php artisan serve in the terminal, open port 8000 and add /buses onto the end of the page's URL.
-
-## additional features that have been implemented for Assignment 2. ##
-For each of the additional features you should provide code samples, explain how and where you have used the feature, and present a critical analysis of the tools/technique/approach used that considers issues such as your reason for selecting it, a discussion of the problem it solves, and any potential limitations
-
 ## Multiple Tables ##
 This application implements two tables, the original Buses table and the new table Statuses, which holds information about the various status held by the buses. Statuses has a one-to-many relationship to Buses, as each status can belong to many different buses, but a bus will only have one status at a time.
 The Status model implements a hasMany relationship to the Bus model, and likewise the Bus model implements a belongsTo relationship to Status.
@@ -105,18 +105,13 @@ This application implements user authentication; multiple users are stored in a 
 
 Authorisation is used throughout the application to control whether a user is able to perform certain actions, like deleting an entry in a database or accessing a page. 
 
-These functions were implemented because the ability to add or edit a bus should be restricted to only those who could be trusted to not put fake entries into the database. A limitation could be 
-
-reason for selecting it, a discussion of the problem it solves, and any potential limitations
+These functions were implemented because the ability to add or edit a bus should be restricted to only those who could be trusted to not put fake entries into the database. A limitation could be that if a non-authorised user genuinely had a correction for data of a bus, they would have to contact an admin user somehow. Another limitation is that an admin user could leave their session running and unattended, and any authorisation protocols would be rendered useless.
 
 ```
 Route::get('/buses', [BusController::class, 'index']);
 Route::post('/buses', [BusController::class, 'store'])->middleware(['auth', 'can:edit']);
 Route::patch('/buses', [BusController::class, 'update'])->middleware('auth');
 ```
-
-bootstrap/react/javascript
-
 
 
 
@@ -128,7 +123,6 @@ bootstrap/react/javascript
 
 ## TODO ##
 make unregistered/status old values show up when the data isnt valid or being edited like all other fields
-use javascript to show validation errors
 pagination buttons
 optimise css (table)
 
