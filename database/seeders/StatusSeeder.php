@@ -13,10 +13,10 @@ class Statusseeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('statuses')->insert(['name' => 'Currently running', 'description' => 'This vehicle has a chance of being used during running days.', 'filename' => "u.png"]);
-        DB::table('statuses')->insert(['name' => 'Maintenance needed', 'description' => 'This vehicle needs some light repairs before it can run again.', 'filename' => "pg.png"]);
-        DB::table('statuses')->insert(['name' => 'In storage', 'description' => 'This vehicle is in storage, likely waiting for considerable repairs.', 'filename' => "12a.png"]);
-        DB::table('statuses')->insert(['name' => 'On loan', 'description' => 'This vehicle is not currently at the museum, and is on loan for repairs or a special event.', 'filename' => "15.png"]);
-        DB::table('statuses')->insert(['name' => 'Dilapidated', 'description' => 'This vehicle is not likely to ever be fully restored.', 'filename' => "18.png"]);
+        DB::table('statuses')->insert(['name' => 'Currently running', 'description' => 'This bus has no major faults and has been found safe to be used by the public, any bus with this status has a chance to be used during open days', 'filename' => "running.png"]);
+        DB::table('statuses')->insert(['name' => 'Maintenance needed', 'description' => 'This bus needs some minor repairs like some fresh oil or water leakage, but soon this bus will be good to run on open days.', 'filename' => "maintenence.png"]);
+        DB::table('statuses')->insert(['name' => 'In storage', 'description' => 'This bus needs some major restoration work done, and is waiting for its turn in the workshop. However it might be a year or more before this bus could be used during an open day.', 'filename' => "storage.png"]);
+        DB::table('statuses')->insert(['name' => 'On loan', 'description' => 'This bus is temporarily being stored elsewhere whilst undergoing restoration work, or for a special event.', 'filename' => "loan.png"]);
+        DB::table('statuses')->insert(['name' => 'Static', 'description' => 'This bus is not likely to ever be fully restored, and is only be able to be viewed as a static exhibit.', 'filename' => "static.png"]);
     }
 }

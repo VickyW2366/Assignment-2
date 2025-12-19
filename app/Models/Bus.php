@@ -11,7 +11,7 @@ class Bus extends Model
 public function status(): BelongsTo
     {
         return $this->belongsTo(Status::class);
-    }
+    } 
         public function getAge()
     {
         return Date('Y') - $this->year;

@@ -7,7 +7,6 @@
 </head>
 <body>
 <x-layout title="List the buses">
-
     <h1>Here's our full list of buses:</h1>
     <p></p>
     <br>
@@ -30,7 +29,6 @@
 <div class="pages">
   <a href="{{ $buses->links() }}"></a>
 </div>
-
 </x-layout>
 </body>
 </html>

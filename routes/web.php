@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BusController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FavouriteController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -12,7 +13,7 @@ Route::get('/', function () {
 Route::get('/buses', [BusController::class, 'index']);
 Route::post('/buses', [BusController::class, 'store'])->middleware(['auth', 'can:edit']);
 Route::patch('/buses', [BusController::class, 'update'])->middleware('auth');
-Route::delete('/buses', [BusController::class, 'destroy'])->middleware('auth');
+Route::delete('/buses', [BusController::class, 'destroy'])->middleware('auth', 'can:edit');
 Route::get('/buses/create', [BusController::class, 'create'])->middleware(['auth', 'can:edit']);
 Route::get('/buses/about', [BusController::class, 'about']);
 Route::get('/buses/{id}', [BusController::class, 'show']);

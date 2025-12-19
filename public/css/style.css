@@ -148,3 +148,18 @@ input[type="text"],
 .submit button:hover {
   background: #987777;
 }
+.fave button {
+  width: 60px;
+  padding: 10px 10px;
+  margin-top: 10px;
+  margin-right: 20px;
+  background: #5e3f3f;
+  color: #dddddd;
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+}
+.fave button:hover {
+  background: #987777;
+}
