@@ -92,12 +92,12 @@ tr:hover {background-color: #e0dcbb;}
 }
  /* .pages a:hover:not(.active) {
   background-color: #e0dcbb;
-}
+} */
 .pages a.disabled {
   color: #dddddd;
   cursor: not-allowed;
   pointer-events: none;
-}  */
+} 
 
 /* Add new bus page */
 .required {

@@ -13,7 +13,7 @@ class BusController extends Controller
     //lists all buses in the database, 6 buses per page
     function index()
     {
-        $buses = Bus::paginate(6);
+        $buses = Bus::simplePaginate(6);
         return view('buses.index',['buses' => $buses]);
     }
     function create()
