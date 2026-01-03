@@ -1,6 +1,4 @@
 # CHT2520 Assignment 2 U2366348 Victoria Wilson
-php artisan serve
-php artisan migrate:fresh --seed
 
 ## How to install and run the project ## 
 Run 'php artisan serve' in the terminal, open port 8000 and add /buses onto the end of the page's URL.
@@ -107,18 +105,6 @@ Route::get('/buses', [BusController::class, 'index']);
 Route::post('/buses', [BusController::class, 'store'])->middleware(['auth', 'can:edit']);
 Route::patch('/buses', [BusController::class, 'update'])->middleware('auth');
 ```
-
-
-
-
-
-
-
-
-
-## TODO ##
-make unregistered/status old values show up when the data isnt valid or being edited like all other fields
-pagination buttons
 
 
 ## Bibliography ##

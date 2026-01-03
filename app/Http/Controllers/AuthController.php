@@ -24,10 +24,12 @@ function login(Request $request)
         'email.required' => 'Please input your email address.',
         'password.required' => 'Please input your password.'
         ]);
-
+// Attempts to log in using the given email and password
     if (Auth::attempt($userDetails)) {
         $request->session()->regenerate();
         return redirect('/buses');
+    } else {
+        return back()->withInput()->withMessage('Your email address or password is incorrect.');
     }
     return back();
 }

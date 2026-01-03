@@ -14,8 +14,9 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('users')->insert(['name' => 'Kate Hutton', 'email' => 'k.l.hutton@hudstudent.ac.uk', 'password' => Hash::make('password'), 'role_id' => 2]);
-        DB::table('users')->insert(['name' => 'Yousef Miandad', 'email' => 'y.miandad@hudstudent.ac.uk', 'password' => Hash::make('letmein'), 'role_id' => 2]);
-        DB::table('users')->insert(['name' => 'Sunil Laxman', 'email' => 's.laxman@hudstudent.ac.uk', 'password' => Hash::make('password2'), 'role_id' => 1]);
+        DB::table('users')->insert(['name' => 'Anjelica Addams', 'email' => 'a.addams@yahoo.com', 'password' => Hash::make('pass!away'), 'role_id' => 1]);
+        DB::table('users')->insert(['name' => 'Kristine Kochanski', 'email' => 'k38504@reddwarf.gov.uk', 'password' => Hash::make('Unf0rtunate_Compan1on_Dec3mber'), 'role_id' => 2]);
+        DB::table('users')->insert(['name' => 'Cecil Palmer', 'email' => 'cgpalmer@nvcradio.com', 'password' => Hash::make('carlos53188'), 'role_id' => 1]);
+        DB::table('users')->insert(['name' => 'Philomena Cunk', 'email' => 'pcunk@bbc.co.uk', 'password' => Hash::make('incorrect'), 'role_id' => 1]);
     }
 }
